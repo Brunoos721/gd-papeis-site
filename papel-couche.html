@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Papel Couchê no Rio de Janeiro | GD Papéis</title>
+  <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fornecedor de papel couchê brilho e fosco no Rio de Janeiro para gráficas e empresas. Alta definição e acabamento profissional." />
+  <title>Papel Couchê | Fornecedor de Papel para Gráficas no RJ | GD Papéis</title>
 
-  <!-- Fonte -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fornecedor de Papel Couchê brilho e fosco no Rio de Janeiro. Alta definição, acabamento premium e fornecimento profissional para gráficas e empresas.">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #0d47a1;
+      --dark: #020617;
+      --blue: #0b1c2d;
+      --blue-accent: #0d47a1;
       --accent: #e53935;
-      --dark: #0b1c2d;
       --light: #f5f7fa;
-      --text: #0f172a;
+      --muted: #94a3b8;
     }
 
     * {
@@ -28,8 +30,8 @@
     body {
       font-family: 'Inter', sans-serif;
       background: var(--light);
-      color: var(--text);
-      line-height: 1.7;
+      color: #0f172a;
+      line-height: 1.6;
     }
 
     a {
@@ -39,106 +41,180 @@
 
     /* HEADER */
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
-      background: #fff;
-      padding: 20px 60px;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      padding: 22px 70px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-      z-index: 10;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
     header strong {
-      font-size: 18px;
-      color: var(--primary);
+      color: var(--blue-accent);
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
 
-    header nav a {
-      margin-left: 25px;
+    nav a {
+      margin-left: 28px;
+      font-size: 14px;
       font-weight: 500;
     }
 
-    header .cta {
+    .cta {
       background: var(--accent);
       color: #fff;
-      padding: 10px 20px;
-      border-radius: 6px;
+      padding: 12px 26px;
+      border-radius: 999px;
       font-weight: 600;
     }
 
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, var(--dark), var(--primary));
+    /* HERO INTERNA */
+    .hero-internal {
+      height: 70vh;
+      background: radial-gradient(circle at 20% 30%, #102a43, #020617 75%);
+      display: flex;
+      align-items: center;
+      padding: 0 90px;
+      position: relative;
       color: #fff;
-      padding: 120px 60px;
     }
 
-    .hero h1 {
-      font-size: 44px;
-      max-width: 900px;
-      margin-bottom: 20px;
+    .hero-internal::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("https://images.unsplash.com/photo-1581093458791-9f3c3900df4b");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.12;
     }
 
-    .hero p {
+    .hero-internal::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(2,6,23,0.95),
+        rgba(2,6,23,0.75),
+        rgba(2,6,23,0.95)
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-content h1 {
+      font-size: 60px;
+      line-height: 1.05;
+      margin-bottom: 28px;
+    }
+
+    .hero-content p {
       font-size: 20px;
-      max-width: 750px;
-      opacity: 0.95;
+      color: #cbd5f5;
+      max-width: 620px;
     }
 
-    /* CONTENT */
+    /* SEÇÕES */
     section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 100px 60px;
+      padding: 140px 90px;
     }
 
-    section h2 {
-      font-size: 32px;
-      margin-bottom: 25px;
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
     }
 
-    section p {
-      font-size: 18px;
-      margin-bottom: 20px;
+    .box {
+      background: #fff;
+      padding: 60px;
+      border-radius: 32px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 28px;
+    }
+
+    .box p {
+      color: #334155;
     }
 
     ul {
-      padding-left: 20px;
-      margin-bottom: 30px;
+      list-style: none;
+      margin-top: 24px;
     }
 
     ul li {
-      margin-bottom: 10px;
-      font-size: 17px;
+      margin-bottom: 14px;
+      padding-left: 22px;
+      position: relative;
+      color: #0f172a;
     }
 
-    /* CTA */
+    ul li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* CTA FINAL */
     .cta-box {
-      background: #fff;
-      padding: 60px;
-      border-radius: 24px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+      background: var(--blue);
+      color: #fff;
+      padding: 90px;
+      border-radius: 40px;
       text-align: center;
-      margin-top: 80px;
+    }
+
+    .cta-box h2 {
+      font-size: 42px;
+      margin-bottom: 22px;
+    }
+
+    .cta-box p {
+      font-size: 18px;
+      color: #cbd5f5;
+      max-width: 720px;
+      margin: 0 auto;
     }
 
     .cta-box a {
       display: inline-block;
-      margin-top: 25px;
+      margin-top: 36px;
       background: var(--accent);
-      color: #fff;
-      padding: 16px 30px;
-      border-radius: 8px;
+      padding: 18px 46px;
+      border-radius: 999px;
       font-weight: 600;
+      color: #fff;
     }
 
-    /* FOOTER */
     footer {
       background: var(--dark);
       color: #fff;
-      padding: 80px 60px;
+      padding: 90px;
     }
 
     footer p {
@@ -148,19 +224,21 @@
 
     @media (max-width: 768px) {
       header {
-        padding: 15px 25px;
+        padding: 18px 25px;
       }
 
-      .hero {
+      .hero-internal,
+      section {
         padding: 90px 25px;
       }
 
-      section {
-        padding: 70px 25px;
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
       }
 
-      .hero h1 {
-        font-size: 32px;
+      .hero-content h1 {
+        font-size: 40px;
       }
     }
   </style>
@@ -177,60 +255,73 @@
   </nav>
 </header>
 
-<div class="hero">
-  <h1>Papel Couchê brilho e fosco para gráficas no Rio de Janeiro</h1>
-  <p>
-    Fornecimento profissional de papel couchê para impressos que exigem
-    alta definição, fidelidade de cor e acabamento superior.
-  </p>
-</div>
+<section class="hero-internal">
+  <div class="hero-content" data-aos="fade-up">
+    <div class="eyebrow">Papel Couchê · Fornecedor no RJ</div>
+    <h1>Papel Couchê para impressos de alto impacto</h1>
+    <p>
+      Quando a fidelidade de cor, o acabamento e a apresentação
+      visual são fatores decisivos no resultado final.
+    </p>
+  </div>
+</section>
 
 <section>
-  <h2>O que é o papel couchê?</h2>
+  <div class="grid">
+    <div class="box" data-aos="fade-up">
+      <h2>O papel da definição na comunicação visual</h2>
+      <p>
+        O Papel Couchê é indicado para projetos gráficos que exigem
+        máxima qualidade de imagem, contraste e acabamento.
+        Sua superfície tratada permite impressões nítidas,
+        com cores intensas e excelente leitura visual.
+      </p>
 
-  <p>
-    O papel couchê é um papel revestido, disponível nas versões brilho e
-    fosco, conhecido por proporcionar excelente definição de imagem e
-    reprodução de cores.
-  </p>
+      <ul>
+        <li>Alta definição de impressão</li>
+        <li>Superfície lisa e uniforme</li>
+        <li>Disponível em brilho e fosco</li>
+        <li>Excelente valorização gráfica</li>
+      </ul>
+    </div>
 
-  <p>
-    É amplamente utilizado em materiais gráficos que exigem impacto visual,
-    sofisticação e acabamento profissional.
-  </p>
+    <div class="box" data-aos="fade-up" data-aos-delay="150">
+      <h2>Aplicações estratégicas</h2>
+      <ul>
+        <li>Catálogos e revistas</li>
+        <li>Folders e materiais promocionais</li>
+        <li>Relatórios e apresentações institucionais</li>
+        <li>Materiais editoriais de alto padrão</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <h2>Principais aplicações</h2>
-
-  <ul>
-    <li>Folders, flyers e catálogos</li>
-    <li>Revistas e materiais editoriais</li>
-    <li>Materiais promocionais e publicitários</li>
-    <li>Apresentações corporativas</li>
-  </ul>
-
-  <h2>Por que comprar papel couchê com a GD Papéis?</h2>
-
-  <ul>
-    <li>Fornecimento contínuo no Rio de Janeiro</li>
-    <li>Versões brilho e fosco</li>
-    <li>Padronização de gramaturas</li>
-    <li>Atendimento profissional para gráficas e empresas</li>
-  </ul>
-
-  <div class="cta-box">
-    <h2>Solicite um orçamento de papel couchê</h2>
+<section>
+  <div class="cta-box" data-aos="fade-up">
+    <h2>Fornecimento confiável para projetos gráficos exigentes</h2>
     <p>
-      Nossa equipe está pronta para atender sua demanda com eficiência.
+      Atendemos gráficas e empresas que trabalham com padrões rigorosos
+      de qualidade, acabamento e consistência de impressão.
     </p>
-    <a href="https://wa.me/552125933264">Falar com especialista</a>
+    <a href="https://wa.me/552125933264">Solicitar orçamento</a>
   </div>
 </section>
 
 <footer>
   <p><strong>GD Comércio de Papéis</strong></p>
-  <p>Fornecedor de papéis para gráficas e empresas no Rio de Janeiro</p>
+  <p>Fornecedor de papel couchê para gráficas e empresas no Rio de Janeiro</p>
   <p>© 2025 — Rio de Janeiro</p>
 </footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-out-cubic',
+    once: true
+  });
+</script>
 
 </body>
 </html>

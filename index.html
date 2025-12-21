@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <title>GD Papéis | Fornecimento de Papéis de Alta Performance</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fornecedor de papéis de alta performance para gráficas e empresas no Rio de Janeiro. Offset, Couchê, Kraft, Duplex e mais." />
 
-  <!-- Fonte Premium -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fornecedor de papéis para gráficas e empresas no Rio de Janeiro. Offset, Couchê, Kraft, Duplex, Color Plus e papéis especiais." />
+
+  <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- AOS (animações de scroll) -->
+  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
@@ -40,41 +41,39 @@
       color: inherit;
     }
 
-    /* HEADER */
     header {
       position: fixed;
       top: 0;
       width: 100%;
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(10px);
+      padding: 20px 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 60px;
       z-index: 1000;
       box-shadow: 0 2px 20px rgba(0,0,0,0.05);
     }
 
     header strong {
-      font-size: 18px;
       color: var(--primary);
+      font-size: 18px;
       font-weight: 700;
     }
 
-    header .cta {
+    nav a {
+      margin-left: 25px;
+      font-weight: 500;
+    }
+
+    .cta {
       background: var(--accent);
       color: #fff;
       padding: 12px 22px;
       border-radius: 6px;
       font-weight: 600;
-      transition: transform 0.3s ease;
     }
 
-    header .cta:hover {
-      transform: translateY(-2px);
-    }
-
-    /* HERO */
     .hero {
       height: 100vh;
       background: linear-gradient(135deg, #0b1c2d, #0d47a1);
@@ -84,18 +83,14 @@
       padding: 0 60px;
     }
 
-    .hero-content {
-      max-width: 700px;
-    }
-
     .hero h1 {
       font-size: 52px;
-      font-weight: 700;
       margin-bottom: 20px;
     }
 
     .hero p {
       font-size: 20px;
+      max-width: 650px;
       opacity: 0.9;
     }
 
@@ -107,20 +102,18 @@
 
     .btn-primary {
       background: var(--accent);
-      color: #fff;
       padding: 16px 30px;
       border-radius: 8px;
       font-weight: 600;
+      color: #fff;
     }
 
     .btn-secondary {
       border: 1px solid rgba(255,255,255,0.4);
       padding: 16px 30px;
       border-radius: 8px;
-      font-weight: 500;
     }
 
-    /* SECTIONS */
     section {
       padding: 120px 60px;
     }
@@ -130,43 +123,24 @@
       margin-bottom: 40px;
     }
 
-    /* AUTORIDADE */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 40px;
-    }
-
-    .feature {
-      background: #fff;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-      font-weight: 600;
-    }
-
-    /* CATALOGO */
+    .features,
     .catalog {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 40px;
     }
 
+    .feature,
     .product {
       background: #fff;
       padding: 40px;
       border-radius: 18px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      transition: all 0.4s ease;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.07);
     }
 
     .product:hover {
       transform: translateY(-6px);
-    }
-
-    .product h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
+      transition: 0.3s ease;
     }
 
     .product span {
@@ -181,15 +155,23 @@
       color: var(--primary);
     }
 
-    /* INFO */
-    .info {
+    .extra-papers {
+      margin-top: 60px;
       background: #fff;
-      border-radius: 24px;
-      padding: 60px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+      padding: 40px;
+      border-radius: 18px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
     }
 
-    /* FOOTER */
+    .extra-papers ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .extra-papers li {
+      margin-bottom: 10px;
+    }
+
     footer {
       background: var(--bg-dark);
       color: #fff;
@@ -201,7 +183,6 @@
       margin-bottom: 10px;
     }
 
-    /* MOBILE */
     @media (max-width: 768px) {
       header {
         padding: 15px 25px;
@@ -209,7 +190,6 @@
 
       .hero {
         padding: 0 25px;
-        text-align: left;
       }
 
       .hero h1 {
@@ -227,95 +207,70 @@
 
 <header>
   <strong>GD Papéis</strong>
-
   <nav>
-    <a href="papel-offset.html">Papel Offset</a>
-    <a href="papel-couche.html">Papel Couchê</a>
-    <a href="papel-kraft.html">Papel Kraft</a>
+    <a href="index.html">Home</a>
+    <a href="fornecedor-de-papel-rj.html">Papéis</a>
     <a href="fornecedor-de-papel-rj.html">Fornecedor RJ</a>
     <a class="cta" href="https://wa.me/552125933264">Orçamento</a>
   </nav>
 </header>
 
 <section class="hero">
-  <div class="hero-content" data-aos="fade-up">
+  <div data-aos="fade-up">
     <h1>Alta performance começa no papel certo.</h1>
     <p>
       Fornecimento profissional de papéis para gráficas e empresas no
       <strong>Rio de Janeiro</strong>, com escala, padronização e confiança.
     </p>
     <div class="hero-buttons">
-      <a class="btn-primary" href="https://wa.me/552125933264" target="_blank">Falar com especialista</a>
-      <a class="btn-secondary" href="#catalogo">Ver catálogo</a>
+      <a class="btn-primary" href="https://wa.me/552125933264">Falar com especialista</a>
+      <a class="btn-secondary" href="#catalogo">Ver papéis</a>
     </div>
-  </div>
-</section>
-
-<section>
-  <h2 class="section-title" data-aos="fade-up">Estrutura para quem não pode errar</h2>
-  <div class="features">
-    <div class="feature" data-aos="fade-up">📍 Operação no Rio de Janeiro</div>
-    <div class="feature" data-aos="fade-up" data-aos-delay="100">📦 Estoque contínuo</div>
-    <div class="feature" data-aos="fade-up" data-aos-delay="200">🚚 Logística eficiente</div>
-    <div class="feature" data-aos="fade-up" data-aos-delay="300">💳 Condições corporativas</div>
   </div>
 </section>
 
 <section id="catalogo">
-  <h2 class="section-title" data-aos="fade-up">Papéis fornecidos</h2>
+  <h2 class="section-title">Papéis fornecidos</h2>
 
   <div class="catalog">
-
-    <div class="product" data-aos="fade-up">
+    <div class="product">
       <h3>Papel Offset</h3>
-      <span>Editorial · Institucional · Grandes tiragens</span>
-      <a href="papel-offset.html" title="Papel Offset para gráficas no Rio de Janeiro">
-        Ver detalhes →
-      </a>
+      <span>Editorial · Institucional</span>
+      <a href="papel-offset.html">Ver detalhes →</a>
     </div>
 
-    <div class="product" data-aos="fade-up" data-aos-delay="100">
-      <h3>Couchê Brilho / Fosco</h3>
-      <span>Alta definição e acabamento</span>
-      <a href="papel-couche.html" title="Papel Couchê para gráficas no Rio de Janeiro">
-        Ver detalhes →
-      </a>
+    <div class="product">
+      <h3>Papel Couchê</h3>
+      <span>Brilho e Fosco</span>
+      <a href="papel-couche.html">Ver detalhes →</a>
     </div>
 
-    <div class="product" data-aos="fade-up" data-aos-delay="200">
+    <div class="product">
       <h3>Papel Kraft</h3>
-      <span>Embalagens e aplicações industriais</span>
-      <a href="papel-kraft.html" title="Papel Kraft para gráficas no Rio de Janeiro">
-        Ver detalhes →
-      </a>
+      <span>Embalagens e indústria</span>
+      <a href="papel-kraft.html">Ver detalhes →</a>
     </div>
 
-    <div class="product" data-aos="fade-up" data-aos-delay="300">
-      <h3>Duplex / Cartão</h3>
-      <span>Rigidez e estrutura</span>
-      <a href="papel-duplex.html" title="Papel Duplex para gráficas no Rio de Janeiro">
-        Ver detalhes →
-      </a>
+    <div class="product">
+      <h3>Papel Duplex</h3>
+      <span>Cartão e estrutura</span>
+      <a href="papel-duplex.html">Ver detalhes →</a>
     </div>
-
   </div>
-</section>
 
-<section>
-  <div class="info" data-aos="fade-up">
-    <h2 class="section-title">Atendimento presencial no Rio de Janeiro</h2>
-    <p>
-      📍 Av. Pastor Martin Luther King Jr., 5747 – Vicente de Carvalho – RJ<br>
-      🕒 Segunda a Sexta, das 08h às 18h<br>
-      📞 (21) 2593-3264 | (21) 2593-8671<br>
-      📧 graficagd4@gmail.com
-    </p>
+  <div class="extra-papers">
+    <h3>Outros papéis disponíveis</h3>
+    <ul>
+      <li><a href="papel-reciclado.html">Papel Reciclado</a></li>
+      <li><a href="papel-color-plus.html">Papel Color Plus</a></li>
+      <li><a href="papel-coat.html">Papel Coat</a></li>
+    </ul>
   </div>
 </section>
 
 <footer>
   <p><strong>GD Comércio de Papéis</strong></p>
-  <p>Fornecedor de papéis de alta performance para gráficas e empresas</p>
+  <p>Fornecedor de papéis para gráficas e empresas no Rio de Janeiro</p>
   <p>© 2025 — Rio de Janeiro</p>
 </footer>
 
@@ -323,7 +278,6 @@
 <script>
   AOS.init({
     duration: 900,
-    easing: 'ease-out-cubic',
     once: true
   });
 </script>

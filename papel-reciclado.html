@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Papel Reciclado no Rio de Janeiro | GD Papéis</title>
+  <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fornecedor de papel reciclado no Rio de Janeiro para gráficas e empresas. Soluções sustentáveis com fornecimento profissional." />
+  <title>Papel Reciclado | Fornecedor de Papel Sustentável no RJ | GD Papéis</title>
 
-  <!-- Fonte -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fornecedor de Papel Reciclado no Rio de Janeiro. Soluções sustentáveis para gráficas e empresas que exigem performance, padronização e responsabilidade ambiental.">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #0d47a1;
+      --dark: #020617;
+      --blue: #0b1c2d;
+      --blue-accent: #0d47a1;
       --accent: #e53935;
-      --dark: #0b1c2d;
       --light: #f5f7fa;
-      --text: #0f172a;
+      --muted: #94a3b8;
     }
 
     * {
@@ -28,8 +30,8 @@
     body {
       font-family: 'Inter', sans-serif;
       background: var(--light);
-      color: var(--text);
-      line-height: 1.7;
+      color: #0f172a;
+      line-height: 1.6;
     }
 
     a {
@@ -39,106 +41,180 @@
 
     /* HEADER */
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
-      background: #fff;
-      padding: 20px 60px;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      padding: 22px 70px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-      z-index: 10;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
     header strong {
-      font-size: 18px;
-      color: var(--primary);
+      color: var(--blue-accent);
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
 
-    header nav a {
-      margin-left: 25px;
+    nav a {
+      margin-left: 28px;
+      font-size: 14px;
       font-weight: 500;
     }
 
-    header .cta {
+    .cta {
       background: var(--accent);
       color: #fff;
-      padding: 10px 20px;
-      border-radius: 6px;
+      padding: 12px 26px;
+      border-radius: 999px;
       font-weight: 600;
     }
 
     /* HERO */
-    .hero {
-      background: linear-gradient(135deg, var(--dark), var(--primary));
+    .hero-internal {
+      height: 70vh;
+      background: radial-gradient(circle at 30% 30%, #1e293b, #020617 75%);
+      display: flex;
+      align-items: center;
+      padding: 0 90px;
+      position: relative;
       color: #fff;
-      padding: 120px 60px;
     }
 
-    .hero h1 {
-      font-size: 44px;
-      max-width: 900px;
-      margin-bottom: 20px;
+    .hero-internal::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("https://images.unsplash.com/photo-1605000797499-95a51c5269ae");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.14;
     }
 
-    .hero p {
+    .hero-internal::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(2,6,23,0.95),
+        rgba(2,6,23,0.75),
+        rgba(2,6,23,0.95)
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-content h1 {
+      font-size: 60px;
+      line-height: 1.05;
+      margin-bottom: 28px;
+    }
+
+    .hero-content p {
       font-size: 20px;
-      max-width: 750px;
-      opacity: 0.95;
+      color: #cbd5f5;
+      max-width: 640px;
     }
 
-    /* CONTENT */
+    /* SEÇÕES */
     section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 100px 60px;
+      padding: 140px 90px;
     }
 
-    section h2 {
-      font-size: 32px;
-      margin-bottom: 25px;
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
     }
 
-    section p {
-      font-size: 18px;
-      margin-bottom: 20px;
+    .box {
+      background: #fff;
+      padding: 60px;
+      border-radius: 32px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 28px;
+    }
+
+    .box p {
+      color: #334155;
     }
 
     ul {
-      padding-left: 20px;
-      margin-bottom: 30px;
+      list-style: none;
+      margin-top: 24px;
     }
 
     ul li {
-      margin-bottom: 10px;
-      font-size: 17px;
+      margin-bottom: 14px;
+      padding-left: 22px;
+      position: relative;
+      color: #0f172a;
     }
 
-    /* CTA */
+    ul li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* CTA FINAL */
     .cta-box {
-      background: #fff;
-      padding: 60px;
-      border-radius: 24px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+      background: var(--blue);
+      color: #fff;
+      padding: 90px;
+      border-radius: 40px;
       text-align: center;
-      margin-top: 80px;
+    }
+
+    .cta-box h2 {
+      font-size: 42px;
+      margin-bottom: 22px;
+    }
+
+    .cta-box p {
+      font-size: 18px;
+      color: #cbd5f5;
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     .cta-box a {
       display: inline-block;
-      margin-top: 25px;
+      margin-top: 36px;
       background: var(--accent);
-      color: #fff;
-      padding: 16px 30px;
-      border-radius: 8px;
+      padding: 18px 46px;
+      border-radius: 999px;
       font-weight: 600;
+      color: #fff;
     }
 
-    /* FOOTER */
     footer {
       background: var(--dark);
       color: #fff;
-      padding: 80px 60px;
+      padding: 90px;
     }
 
     footer p {
@@ -148,19 +224,21 @@
 
     @media (max-width: 768px) {
       header {
-        padding: 15px 25px;
+        padding: 18px 25px;
       }
 
-      .hero {
+      .hero-internal,
+      section {
         padding: 90px 25px;
       }
 
-      section {
-        padding: 70px 25px;
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
       }
 
-      .hero h1 {
-        font-size: 32px;
+      .hero-content h1 {
+        font-size: 40px;
       }
     }
   </style>
@@ -177,61 +255,76 @@
   </nav>
 </header>
 
-<div class="hero">
-  <h1>Papel reciclado para gráficas e empresas no Rio de Janeiro</h1>
-  <p>
-    Fornecimento profissional de papel reciclado para operações que buscam
-    soluções sustentáveis sem abrir mão de desempenho e padronização.
-  </p>
-</div>
+<section class="hero-internal">
+  <div class="hero-content" data-aos="fade-up">
+    <div class="eyebrow">Papel Reciclado · Sustentabilidade Operacional</div>
+    <h1>Sustentabilidade com desempenho técnico</h1>
+    <p>
+      Papel reciclado para empresas que buscam alinhar
+      responsabilidade ambiental com padronização,
+      escala e desempenho produtivo.
+    </p>
+  </div>
+</section>
 
 <section>
-  <h2>O que é o papel reciclado?</h2>
+  <div class="grid">
+    <div class="box" data-aos="fade-up">
+      <h2>Mais do que consciência ambiental</h2>
+      <p>
+        O papel reciclado evoluiu.
+        Hoje, ele atende projetos corporativos
+        que exigem regularidade, estabilidade
+        e compatibilidade com processos gráficos
+        e industriais.
+      </p>
 
-  <p>
-    O papel reciclado é produzido a partir da reutilização de fibras,
-    reduzindo o impacto ambiental e atendendo empresas que adotam práticas
-    sustentáveis em seus processos.
-  </p>
+      <ul>
+        <li>Redução do impacto ambiental</li>
+        <li>Boa performance em impressão</li>
+        <li>Padronização entre lotes</li>
+        <li>Disponível em diferentes gramaturas</li>
+      </ul>
+    </div>
 
-  <p>
-    Na <strong>GD Papéis</strong>, fornecemos papel reciclado com controle de
-    qualidade, padronização de gramatura e fornecimento contínuo para
-    gráficas e empresas no Rio de Janeiro.
-  </p>
+    <div class="box" data-aos="fade-up" data-aos-delay="150">
+      <h2>Principais aplicações</h2>
+      <ul>
+        <li>Materiais institucionais</li>
+        <li>Projetos editoriais sustentáveis</li>
+        <li>Embalagens ecológicas</li>
+        <li>Empresas com políticas ESG</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <h2>Principais aplicações</h2>
-
-  <ul>
-    <li>Materiais institucionais sustentáveis</li>
-    <li>Relatórios e documentos corporativos</li>
-    <li>Impressos promocionais ecológicos</li>
-    <li>Projetos editoriais com apelo ambiental</li>
-  </ul>
-
-  <h2>Por que comprar papel reciclado com a GD Papéis?</h2>
-
-  <ul>
-    <li>Fornecimento profissional no RJ</li>
-    <li>Padronização de qualidade</li>
-    <li>Atendimento para empresas e gráficas</li>
-    <li>Compromisso com sustentabilidade</li>
-  </ul>
-
-  <div class="cta-box">
-    <h2>Solicite um orçamento de papel reciclado</h2>
+<section>
+  <div class="cta-box" data-aos="fade-up">
+    <h2>Fornecimento responsável em escala</h2>
     <p>
-      Fale com nossa equipe e receba atendimento profissional para sua demanda.
+      Atendemos empresas que precisam integrar
+      sustentabilidade à operação sem comprometer
+      prazos, qualidade ou consistência.
     </p>
-    <a href="https://wa.me/552125933264">Falar com especialista</a>
+    <a href="https://wa.me/552125933264">Solicitar orçamento</a>
   </div>
 </section>
 
 <footer>
   <p><strong>GD Comércio de Papéis</strong></p>
-  <p>Fornecedor de papéis para gráficas e empresas no Rio de Janeiro</p>
+  <p>Fornecedor de papel reciclado para empresas no Rio de Janeiro</p>
   <p>© 2025 — Rio de Janeiro</p>
 </footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-out-cubic',
+    once: true
+  });
+</script>
 
 </body>
 </html>

@@ -41,6 +41,7 @@
       color: inherit;
     }
 
+    /* HEADER */
     header {
       position: fixed;
       top: 0;
@@ -74,46 +75,81 @@
       font-weight: 600;
     }
 
-    .hero {
+    /* HERO PREMIUM */
+    .hero-premium {
+      position: relative;
       height: 100vh;
-      background: linear-gradient(135deg, #0b1c2d, #0d47a1);
-      color: #fff;
+      background-image: url("https://images.unsplash.com/photo-1581093458791-9f3c3900df4b");
+      background-size: cover;
+      background-position: center;
       display: flex;
       align-items: center;
       padding: 0 60px;
+      color: #fff;
     }
 
-    .hero h1 {
-      font-size: 52px;
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        rgba(11,28,45,0.95),
+        rgba(11,28,45,0.75)
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 720px;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-block;
       margin-bottom: 20px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.12);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
-    .hero p {
+    .hero-premium h1 {
+      font-size: 56px;
+      line-height: 1.1;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .hero-premium p {
       font-size: 20px;
-      max-width: 650px;
       opacity: 0.9;
+      max-width: 650px;
     }
 
     .hero-buttons {
-      margin-top: 35px;
+      margin-top: 40px;
       display: flex;
       gap: 20px;
     }
 
     .btn-primary {
       background: var(--accent);
-      padding: 16px 30px;
+      padding: 16px 32px;
       border-radius: 8px;
       font-weight: 600;
       color: #fff;
     }
 
     .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.4);
-      padding: 16px 30px;
+      border: 1px solid rgba(255,255,255,0.5);
+      padding: 16px 32px;
       border-radius: 8px;
+      color: #fff;
     }
 
+    /* SECTIONS */
     section {
       padding: 120px 60px;
     }
@@ -188,11 +224,11 @@
         padding: 15px 25px;
       }
 
-      .hero {
+      .hero-premium {
         padding: 0 25px;
       }
 
-      .hero h1 {
+      .hero-premium h1 {
         font-size: 36px;
       }
 
@@ -210,21 +246,29 @@
   <nav>
     <a href="index.html">Home</a>
     <a href="fornecedor-de-papel-rj.html">Papéis</a>
-    <a href="fornecedor-de-papel-rj.html">Fornecedor RJ</a>
     <a class="cta" href="https://wa.me/552125933264">Orçamento</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div data-aos="fade-up">
-    <h1>Alta performance começa no papel certo.</h1>
+<section class="hero-premium">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content" data-aos="fade-up">
+    <span class="hero-badge">Fornecedor de papel • Rio de Janeiro</span>
+
+    <h1>
+      Fornecimento de papel<br>
+      em escala industrial
+    </h1>
+
     <p>
-      Fornecimento profissional de papéis para gráficas e empresas no
-      <strong>Rio de Janeiro</strong>, com escala, padronização e confiança.
+      Atendemos gráficas e empresas que exigem padronização,
+      volume e confiabilidade no fornecimento de papéis.
     </p>
+
     <div class="hero-buttons">
-      <a class="btn-primary" href="https://wa.me/552125933264">Falar com especialista</a>
-      <a class="btn-secondary" href="#catalogo">Ver papéis</a>
+      <a href="https://wa.me/552125933264" class="btn-primary">Solicitar orçamento</a>
+      <a href="#catalogo" class="btn-secondary">Ver tipos de papel</a>
     </div>
   </div>
 </section>
@@ -263,7 +307,6 @@
     <ul>
       <li><a href="papel-reciclado.html">Papel Reciclado</a></li>
       <li><a href="papel-color-plus.html">Papel Color Plus</a></li>
-      <li><a href="papel-couche.html">Papel Couchê</a></li>
     </ul>
   </div>
 </section>

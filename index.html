@@ -1,361 +1,256 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>GD Papéis | Fornecimento de Papéis de Alta Performance</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GD Papéis — Distribuição de Papéis Gráficos no RJ</title>
+<meta name="description" content="GD Papéis — Distribuição de papéis gráficos no Rio de Janeiro. Atendimento B2B, qualidade, prazo e fornecimento contínuo.">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fornecedor de papéis para gráficas e empresas no Rio de Janeiro. Offset, Couchê, Kraft, Duplex, Color Plus e papéis especiais." />
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
-  <!-- Fonte -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =======================
+   VARIÁVEIS (IDENTIDADE)
+   ======================= */
+:root{
+  --primary:#0b2a4a;      /* Azul GD (ajustável) */
+  --accent:#f2b705;       /* Amarelo GD (ajustável) */
+  --dark:#05070a;
+  --panel:#0c1420;
+  --muted:#bfc7d5;
+  --ease:cubic-bezier(.2,.9,.2,1);
+}
 
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  background:var(--dark);
+  color:#fff;
+  font-family:'Montserrat',sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
 
-  <style>
-    :root {
-      --blue-dark: #020617;
-      --blue-main: #0b1c2d;
-      --blue-accent: #0d47a1;
-      --accent: #e53935;
-      --light: #f5f7fa;
-      --text-muted: #94a3b8;
-    }
+/* =======================
+   BASE
+   ======================= */
+.container{max-width:1200px;margin:auto;padding:0 22px}
+section{padding:90px 0;position:relative}
+h1,h2,h3{font-weight:900;letter-spacing:-.02em}
+p{color:var(--muted);line-height:1.6}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* =======================
+   HERO CINEMA
+   ======================= */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(180deg,#020409,#08182f);
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--light);
-      color: #0f172a;
-      line-height: 1.6;
-    }
+.hero video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(.25) saturate(1.1);
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top,rgba(11,42,74,.6),transparent 60%);
+}
 
-    /* HEADER */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px);
-      padding: 22px 70px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
+.hero-content{
+  position:relative;
+  z-index:10;
+  max-width:900px;
+}
 
-    header strong {
-      color: var(--blue-accent);
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
+.hero h1{
+  font-size:3.4rem;
+  background:linear-gradient(90deg,#fff,var(--accent));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-    nav a {
-      margin-left: 28px;
-      font-weight: 500;
-      font-size: 14px;
-    }
+.hero p{
+  margin:20px 0 30px;
+  font-size:1.15rem;
+}
 
-    .cta {
-      background: var(--accent);
-      color: #fff;
-      padding: 12px 26px;
-      border-radius: 999px;
-      font-weight: 600;
-    }
+.btn{
+  display:inline-block;
+  padding:16px 36px;
+  border-radius:14px;
+  background:linear-gradient(90deg,var(--accent),#ffd65c);
+  color:#1a1a1a;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 25px 80px rgba(242,183,5,.25);
+  transition:.25s var(--ease);
+}
+.btn:hover{transform:translateY(-4px)}
 
-    /* HERO ELITE */
-    .hero-elite {
-      position: relative;
-      height: 100vh;
-      background: radial-gradient(
-        circle at 20% 30%,
-        #102a43,
-        #020617 75%
-      );
-      display: flex;
-      align-items: center;
-      padding: 0 90px;
-      color: #ffffff;
-      overflow: hidden;
-    }
+/* =======================
+   AUTORIDADE
+   ======================= */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;
+  margin-top:-60px;
+  position:relative;
+  z-index:20;
+}
+.stat{
+  background:linear-gradient(180deg,var(--panel),#05070a);
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:16px;
+  padding:28px;
+  text-align:center;
+}
+.stat h3{color:var(--accent);font-size:2.2rem}
+.stat span{color:var(--muted)}
 
-    .hero-elite::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: url("https://images.unsplash.com/photo-1616627985126-9edb8b08c5d3");
-      background-size: cover;
-      background-position: center;
-      opacity: 0.12;
-    }
+/* =======================
+   SOBRE
+   ======================= */
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+@media(max-width:900px){.split{grid-template-columns:1fr}}
 
-    .hero-elite::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(2,6,23,0.95),
-        rgba(2,6,23,0.7),
-        rgba(2,6,23,0.95)
-      );
-    }
+.badge{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:20px;
+  background:rgba(242,183,5,.12);
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:14px;
+}
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 880px;
-    }
+/* =======================
+   DIFERENCIAIS
+   ======================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+}
+.card{
+  background:linear-gradient(180deg,#0b1422,#05070a);
+  padding:28px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.05);
+}
+.card h3{color:var(--accent);margin-bottom:10px}
 
-    .hero-eyebrow {
-      font-size: 12px;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 30px;
-    }
+/* =======================
+   CTA FINAL
+   ======================= */
+.cta{
+  background:linear-gradient(180deg,#020409,#08182f);
+  text-align:center;
+}
+footer{
+  padding:40px 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+}
 
-    .hero-elite h1 {
-      font-size: 72px;
-      line-height: 1.04;
-      font-weight: 700;
-      margin-bottom: 35px;
-    }
-
-    .hero-elite h1 span {
-      color: var(--accent);
-    }
-
-    .hero-elite p {
-      font-size: 21px;
-      color: #cbd5f5;
-      max-width: 620px;
-    }
-
-    .hero-actions {
-      margin-top: 55px;
-      display: flex;
-      gap: 35px;
-      align-items: center;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      padding: 18px 44px;
-      border-radius: 999px;
-      font-weight: 600;
-      color: #fff;
-    }
-
-    .btn-secondary {
-      font-weight: 500;
-      color: #fff;
-      border-bottom: 2px solid rgba(255,255,255,0.3);
-      padding-bottom: 6px;
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 140px 90px;
-    }
-
-    .section-title {
-      font-size: 42px;
-      margin-bottom: 60px;
-    }
-
-    .catalog {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 50px;
-    }
-
-    .product {
-      background: #fff;
-      padding: 48px;
-      border-radius: 26px;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.08);
-      transition: all 0.4s ease;
-    }
-
-    .product:hover {
-      transform: translateY(-10px);
-    }
-
-    .product h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
-
-    .product span {
-      font-size: 14px;
-      color: #64748b;
-    }
-
-    .product a {
-      display: inline-block;
-      margin-top: 30px;
-      font-weight: 600;
-      color: var(--blue-accent);
-    }
-
-    .extra-papers {
-      margin-top: 80px;
-      background: var(--blue-main);
-      color: #fff;
-      padding: 60px;
-      border-radius: 32px;
-    }
-
-    .extra-papers h3 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    .extra-papers ul {
-      list-style: none;
-    }
-
-    .extra-papers li {
-      margin-bottom: 10px;
-    }
-
-    footer {
-      background: var(--blue-dark);
-      color: #fff;
-      padding: 90px;
-    }
-
-    footer p {
-      opacity: 0.8;
-      margin-bottom: 10px;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        padding: 18px 25px;
-      }
-
-      .hero-elite {
-        padding: 0 25px;
-      }
-
-      .hero-elite h1 {
-        font-size: 42px;
-      }
-
-      section {
-        padding: 90px 25px;
-      }
-    }
-  </style>
+/* =======================
+   REVEAL
+   ======================= */
+.reveal{opacity:0;transform:translateY(20px);transition:.8s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+</style>
 </head>
 
 <body>
 
-<header>
-  <strong>GD Papéis</strong>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="fornecedor-de-papel-rj.html">Papéis</a>
-    <a class="cta" href="https://wa.me/552125933264">Orçamento</a>
-  </nav>
-</header>
+<!-- HERO -->
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="assets/video-industrial.mp4" type="video/mp4">
+  </video>
 
-<section class="hero-elite">
-  <div class="hero-content" data-aos="fade-up">
-
-    <div class="hero-eyebrow">
-      Fornecedor estratégico de papel · Rio de Janeiro
-    </div>
-
-    <h1>
-      Papel não é insumo.<br>
-      <span>É performance.</span>
-    </h1>
-
-    <p>
-      Fornecimento profissional de papéis para gráficas e empresas
-      que operam em escala e não podem errar.
-    </p>
-
-    <div class="hero-actions">
-      <a href="https://wa.me/552125933264" class="btn-primary">
-        Solicitar orçamento
-      </a>
-      <a href="#catalogo" class="btn-secondary">
-        Ver portfólio
-      </a>
-    </div>
-
+  <div class="hero-content reveal">
+    <h1>Distribuição de Papéis com Padrão Industrial no RJ</h1>
+    <p>Fornecimento contínuo, qualidade gráfica e atendimento especializado para gráficas e empresas.</p>
+    <a href="https://wa.me/55SEUNUMERO" class="btn">Solicitar Orçamento no WhatsApp</a>
   </div>
 </section>
 
-<section id="catalogo">
-  <h2 class="section-title">Papéis fornecidos</h2>
-
-  <div class="catalog">
-    <div class="product">
-      <h3>Papel Offset</h3>
-      <span>Editorial · Institucional</span>
-      <a href="papel-offset.html">Ver detalhes →</a>
-    </div>
-
-    <div class="product">
-      <h3>Papel Couchê</h3>
-      <span>Brilho e Fosco</span>
-      <a href="papel-couche.html">Ver detalhes →</a>
-    </div>
-
-    <div class="product">
-      <h3>Papel Kraft</h3>
-      <span>Embalagens e indústria</span>
-      <a href="papel-kraft.html">Ver detalhes →</a>
-    </div>
-
-    <div class="product">
-      <h3>Papel Duplex</h3>
-      <span>Cartão e estrutura</span>
-      <a href="papel-duplex.html">Ver detalhes →</a>
-    </div>
+<!-- AUTORIDADE -->
+<section class="container">
+  <div class="stats">
+    <div class="stat reveal"><h3>RJ</h3><span>Atuação Regional</span></div>
+    <div class="stat reveal"><h3>B2B</h3><span>Foco Profissional</span></div>
+    <div class="stat reveal"><h3>Papel</h3><span>Linha Gráfica</span></div>
+    <div class="stat reveal"><h3>Prazo</h3><span>Compromisso Real</span></div>
   </div>
+</section>
 
-  <div class="extra-papers">
-    <h3>Outros papéis disponíveis</h3>
-    <ul>
-      <li><a href="papel-reciclado.html">Papel Reciclado</a></li>
-      <li><a href="papel-color-plus.html">Papel Color Plus</a></li>
-    </ul>
+<!-- SOBRE -->
+<section class="container split">
+  <div class="reveal">
+    <span class="badge">Sobre a GD Papéis</span>
+    <h2>Fornecimento confiável para quem não pode parar</h2>
+    <p>A GD Papéis atua no fornecimento de papéis gráficos com foco em relacionamento, constância e atendimento técnico. Atendemos gráficas e empresas que exigem padrão, prazo e previsibilidade.</p>
+  </div>
+  <div class="reveal">
+    <p>Mais do que vender papel, a GD Papéis se posiciona como parceira estratégica da produção gráfica.</p>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="container">
+  <h2 class="reveal" style="text-align:center;margin-bottom:40px">Por que escolher a GD Papéis</h2>
+  <div class="grid">
+    <div class="card reveal"><h3>Atendimento Consultivo</h3><p>Entendemos sua demanda antes de indicar qualquer material.</p></div>
+    <div class="card reveal"><h3>Constância de Fornecimento</h3><p>Estoque e logística pensados para produção contínua.</p></div>
+    <div class="card reveal"><h3>Padrão de Qualidade</h3><p>Materiais gráficos com controle e procedência.</p></div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta">
+  <div class="container reveal">
+    <h2>Solicite um orçamento agora</h2>
+    <p>Atendimento direto via WhatsApp com nossa equipe.</p>
+    <a href="https://wa.me/55SEUNUMERO" class="btn">Falar com a GD Papéis</a>
   </div>
 </section>
 
 <footer>
-  <p><strong>GD Comércio de Papéis</strong></p>
-  <p>Fornecedor de papéis para gráficas e empresas no Rio de Janeiro</p>
-  <p>© 2025 — Rio de Janeiro</p>
+© 2025 GD Papéis — Todos os direitos reservados · Rio de Janeiro
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({
-    duration: 1000,
-    easing: 'ease-out-cubic',
-    once: true
-  });
+/* Reveal on scroll */
+const els=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(e=>{
+  e.forEach(x=>{
+    if(x.isIntersecting){
+      x.target.classList.add('visible');
+      io.unobserve(x.target);
+    }
+  })
+},{threshold:.15});
+els.forEach(el=>io.observe(el));
 </script>
 
 </body>

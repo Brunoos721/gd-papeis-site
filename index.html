@@ -1,256 +1,307 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GD Papéis — Distribuição de Papéis Gráficos no RJ</title>
-<meta name="description" content="GD Papéis — Distribuição de papéis gráficos no Rio de Janeiro. Atendimento B2B, qualidade, prazo e fornecimento contínuo.">
+<meta charset="UTF-8">
+<title>GD Papéis | Distribuidora de Papéis Gráficos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-/* =======================
-   VARIÁVEIS (IDENTIDADE)
-   ======================= */
 :root{
-  --primary:#0b2a4a;      /* Azul GD (ajustável) */
-  --accent:#f2b705;       /* Amarelo GD (ajustável) */
-  --dark:#05070a;
-  --panel:#0c1420;
-  --muted:#bfc7d5;
-  --ease:cubic-bezier(.2,.9,.2,1);
+  --blue:#0e2a47;
+  --blue2:#1e4f80;
+  --dark:#08131f;
+  --accent:#f1c86a;
+  --bg:#f4f7fb;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{
-  background:var(--dark);
-  color:#fff;
-  font-family:'Montserrat',sans-serif;
-  -webkit-font-smoothing:antialiased;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:#1a1a1a;
+  overflow-x:hidden;
+}
+.container{max-width:1280px;margin:auto;padding:0 28px}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,.05);
+  z-index:99;
+}
+.header-inner{
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  font-weight:900;
+  font-size:1.3rem;
+  color:var(--blue);
+}
+.nav a{
+  margin-left:28px;
+  font-weight:500;
+  text-decoration:none;
+  color:#333;
 }
 
-/* =======================
-   BASE
-   ======================= */
-.container{max-width:1200px;margin:auto;padding:0 22px}
-section{padding:90px 0;position:relative}
-h1,h2,h3{font-weight:900;letter-spacing:-.02em}
-p{color:var(--muted);line-height:1.6}
-
-/* =======================
-   HERO CINEMA
-   ======================= */
+/* HERO */
 .hero{
   min-height:100vh;
   display:flex;
   align-items:center;
-  justify-content:center;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-  background:linear-gradient(180deg,#020409,#08182f);
+  background:
+    radial-gradient(circle at 20% 10%, #245b99, transparent 40%),
+    linear-gradient(120deg,var(--blue),var(--dark));
+  color:white;
 }
-
-.hero video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(.25) saturate(1.1);
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:60px;
 }
-
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at top,rgba(11,42,74,.6),transparent 60%);
-}
-
-.hero-content{
-  position:relative;
-  z-index:10;
-  max-width:900px;
-}
-
 .hero h1{
-  font-size:3.4rem;
+  font-size:3.2rem;
+  font-weight:900;
   background:linear-gradient(90deg,#fff,var(--accent));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
-
-.hero p{
-  margin:20px 0 30px;
-  font-size:1.15rem;
-}
-
+.hero p{margin-top:20px;opacity:.9}
 .btn{
   display:inline-block;
-  padding:16px 36px;
-  border-radius:14px;
-  background:linear-gradient(90deg,var(--accent),#ffd65c);
-  color:#1a1a1a;
-  font-weight:900;
-  text-decoration:none;
-  box-shadow:0 25px 80px rgba(242,183,5,.25);
-  transition:.25s var(--ease);
-}
-.btn:hover{transform:translateY(-4px)}
-
-/* =======================
-   AUTORIDADE
-   ======================= */
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:24px;
-  margin-top:-60px;
-  position:relative;
-  z-index:20;
-}
-.stat{
-  background:linear-gradient(180deg,var(--panel),#05070a);
-  border:1px solid rgba(255,255,255,.05);
-  border-radius:16px;
-  padding:28px;
-  text-align:center;
-}
-.stat h3{color:var(--accent);font-size:2.2rem}
-.stat span{color:var(--muted)}
-
-/* =======================
-   SOBRE
-   ======================= */
-.split{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
-}
-@media(max-width:900px){.split{grid-template-columns:1fr}}
-
-.badge{
-  display:inline-block;
-  padding:6px 14px;
-  border-radius:20px;
-  background:rgba(242,183,5,.12);
-  color:var(--accent);
+  margin-top:30px;
+  padding:18px 38px;
+  background:linear-gradient(90deg,var(--accent),#ffe9ad);
+  color:#000;
   font-weight:700;
-  margin-bottom:14px;
+  border-radius:14px;
+  text-decoration:none;
+  box-shadow:0 30px 90px rgba(0,0,0,.35);
 }
 
-/* =======================
-   DIFERENCIAIS
-   ======================= */
-.grid{
+/* SECTIONS */
+section{padding:120px 0}
+.section-title{text-align:center;margin-bottom:80px}
+.section-title h2{
+  font-size:2.4rem;
+  font-weight:900;
+  background:linear-gradient(90deg,var(--blue),var(--blue2));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.section-title p{margin-top:12px;color:#555}
+
+/* PAPERS */
+.papers{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:26px;
+  gap:28px;
 }
-.card{
-  background:linear-gradient(180deg,#0b1422,#05070a);
-  padding:28px;
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,.05);
+.paper{
+  background:white;
+  border-radius:22px;
+  padding:34px;
+  border:1px solid #e5e5e5;
+  transition:.4s;
 }
-.card h3{color:var(--accent);margin-bottom:10px}
+.paper:hover{
+  transform:translateY(-10px);
+  box-shadow:0 40px 120px rgba(0,0,0,.18);
+}
+.paper svg{
+  width:44px;
+  margin-bottom:18px;
+  fill:var(--blue);
+}
+.paper h3{
+  color:var(--blue);
+  font-size:1.2rem;
+}
+.paper p{
+  font-size:.95rem;
+  color:#555;
+  margin:10px 0 22px;
+}
+.paper a{
+  display:block;
+  text-align:center;
+  padding:14px;
+  border-radius:10px;
+  background:linear-gradient(90deg,var(--accent),#ffe6a3);
+  color:#000;
+  font-weight:600;
+  text-decoration:none;
+}
 
-/* =======================
-   CTA FINAL
-   ======================= */
+/* DIFFERENTIALS */
+.diff-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:32px;
+}
+.diff{
+  background:linear-gradient(160deg,#fff,#f1f4f8);
+  padding:40px;
+  border-radius:24px;
+}
+
+/* STEPS */
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+.step{
+  background:linear-gradient(140deg,var(--blue),var(--dark));
+  color:white;
+  padding:42px;
+  border-radius:26px;
+}
+.step span{
+  font-size:2.4rem;
+  font-weight:900;
+  color:var(--accent);
+}
+
+/* CTA */
 .cta{
-  background:linear-gradient(180deg,#020409,#08182f);
+  background:
+    radial-gradient(circle at top,#2a6db5,transparent 50%),
+    linear-gradient(120deg,var(--blue2),var(--blue));
+  color:white;
   text-align:center;
-}
-footer{
-  padding:40px 0;
-  text-align:center;
-  color:var(--muted);
-  font-size:14px;
 }
 
-/* =======================
-   REVEAL
-   ======================= */
-.reveal{opacity:0;transform:translateY(20px);transition:.8s var(--ease)}
-.reveal.visible{opacity:1;transform:none}
+/* FOOTER */
+footer{
+  background:#07101b;
+  color:#aaa;
+  padding:80px 0;
+}
+footer strong{color:white}
+
+/* ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s cubic-bezier(.2,.8,.2,1);
+}
+.reveal.active{
+  opacity:1;
+  transform:none;
+}
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<header>
+  <div class="container header-inner">
+    <div class="logo">GD Papéis</div>
+    <nav class="nav">
+      <a href="#papeis">Papéis</a>
+      <a href="#como">Como Comprar</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
 <section class="hero">
-  <video autoplay muted loop playsinline>
-    <source src="assets/video-industrial.mp4" type="video/mp4">
-  </video>
-
-  <div class="hero-content reveal">
-    <h1>Distribuição de Papéis com Padrão Industrial no RJ</h1>
-    <p>Fornecimento contínuo, qualidade gráfica e atendimento especializado para gráficas e empresas.</p>
-    <a href="https://wa.me/55SEUNUMERO" class="btn">Solicitar Orçamento no WhatsApp</a>
+  <div class="container hero-grid reveal">
+    <div>
+      <h1>Distribuição profissional de papéis gráficos</h1>
+      <p>Estoque amplo, pronta entrega e atendimento direto para gráficas e empresas.</p>
+      <a class="btn" href="https://wa.me/552122893534">Solicitar orçamento</a>
+    </div>
   </div>
 </section>
 
-<!-- AUTORIDADE -->
-<section class="container">
-  <div class="stats">
-    <div class="stat reveal"><h3>RJ</h3><span>Atuação Regional</span></div>
-    <div class="stat reveal"><h3>B2B</h3><span>Foco Profissional</span></div>
-    <div class="stat reveal"><h3>Papel</h3><span>Linha Gráfica</span></div>
-    <div class="stat reveal"><h3>Prazo</h3><span>Compromisso Real</span></div>
+<section id="papeis">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Confira nossa linha de papéis</h2>
+      <p>Solicite orçamento direto por produto</p>
+    </div>
+    <div class="papers reveal" id="papersGrid"></div>
   </div>
 </section>
 
-<!-- SOBRE -->
-<section class="container split">
-  <div class="reveal">
-    <span class="badge">Sobre a GD Papéis</span>
-    <h2>Fornecimento confiável para quem não pode parar</h2>
-    <p>A GD Papéis atua no fornecimento de papéis gráficos com foco em relacionamento, constância e atendimento técnico. Atendemos gráficas e empresas que exigem padrão, prazo e previsibilidade.</p>
-  </div>
-  <div class="reveal">
-    <p>Mais do que vender papel, a GD Papéis se posiciona como parceira estratégica da produção gráfica.</p>
-  </div>
-</section>
-
-<!-- DIFERENCIAIS -->
-<section class="container">
-  <h2 class="reveal" style="text-align:center;margin-bottom:40px">Por que escolher a GD Papéis</h2>
-  <div class="grid">
-    <div class="card reveal"><h3>Atendimento Consultivo</h3><p>Entendemos sua demanda antes de indicar qualquer material.</p></div>
-    <div class="card reveal"><h3>Constância de Fornecimento</h3><p>Estoque e logística pensados para produção contínua.</p></div>
-    <div class="card reveal"><h3>Padrão de Qualidade</h3><p>Materiais gráficos com controle e procedência.</p></div>
+<section id="como">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Como comprar</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><span>1</span><p>Envie sua lista pelo WhatsApp</p></div>
+      <div class="step"><span>2</span><p>Receba cotação rápida</p></div>
+      <div class="step"><span>3</span><p>Entrega ágil no RJ</p></div>
+    </div>
   </div>
 </section>
 
-<!-- CTA FINAL -->
-<section class="cta">
+<section class="cta" id="contato">
   <div class="container reveal">
-    <h2>Solicite um orçamento agora</h2>
-    <p>Atendimento direto via WhatsApp com nossa equipe.</p>
-    <a href="https://wa.me/55SEUNUMERO" class="btn">Falar com a GD Papéis</a>
+    <h2>Atendimento direto para empresas</h2>
+    <p>Fale agora com nosso time comercial</p>
+    <a class="btn" href="https://wa.me/552122893534">Falar no WhatsApp</a>
   </div>
 </section>
 
 <footer>
-© 2025 GD Papéis — Todos os direitos reservados · Rio de Janeiro
+  <div class="container">
+    <p><strong>GD Papéis</strong><br>
+    Distribuidora de Papéis Gráficos<br>
+    Rio de Janeiro – RJ</p>
+  </div>
 </footer>
 
 <script>
-/* Reveal on scroll */
-const els=document.querySelectorAll('.reveal');
-const io=new IntersectionObserver(e=>{
-  e.forEach(x=>{
-    if(x.isIntersecting){
-      x.target.classList.add('visible');
-      io.unobserve(x.target);
-    }
-  })
+const whatsapp = "552122893534";
+const papers = [
+ {name:"Offset",desc:"Papel gráfico para impressão em geral."},
+ {name:"Superbond",desc:"Papel colorido e branco."},
+ {name:"Autocopiativo",desc:"CB, CFB e CF."},
+ {name:"Couchê",desc:"Brilho e fosco."},
+ {name:"Kraft",desc:"Kraft natural."},
+ {name:"Duplex & Triplex",desc:"Alta gramatura."},
+ {name:"Adesivo",desc:"Fosco ou brilho."},
+ {name:"Cartolinas",desc:"Diversas cores."}
+];
+
+const icon = `<svg viewBox="0 0 24 24"><path d="M4 2h12l4 4v16H4z"/></svg>`;
+const grid = document.getElementById("papersGrid");
+
+papers.forEach(p=>{
+ const msg = encodeURIComponent(`Olá! Gostaria de solicitar um orçamento para ${p.name}. Poderia me informar valores e condições, por favor?`);
+ grid.innerHTML += `
+  <div class="paper reveal">
+    ${icon}
+    <h3>${p.name}</h3>
+    <p>${p.desc}</p>
+    <a href="https://wa.me/${whatsapp}?text=${msg}" target="_blank">Solicitar orçamento</a>
+  </div>
+ `;
+});
+
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries=>{
+ entries.forEach(e=>{
+  if(e.isIntersecting){
+   e.target.classList.add('active');
+   io.unobserve(e.target);
+  }
+ });
 },{threshold:.15});
-els.forEach(el=>io.observe(el));
+reveals.forEach(r=>io.observe(r));
 </script>
 
 </body>
